@@ -48,23 +48,14 @@ def log(bot,update):
 def bot_help(bot,update):
     help_string = f'''
 /{BotCommands.HelpCommand}: To get this message
-
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to google drive
-
 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: start mirroring and upload the archived (.tar) version of the download
-
 /{BotCommands.CancelMirror} : Reply to the message by which the download was initiated and that download will be cancelled
-
 /{BotCommands.StatusCommand}: Shows a status of all the downloads
-
 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google drive, if found replies with the link
-
 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
-
 /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by owner of the bot)
-
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
 '''
     sendMessage(help_string, bot, update)
 
