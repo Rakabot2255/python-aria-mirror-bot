@@ -24,7 +24,7 @@ class GoogleDriveHelper:
         # Redirect URI for installed apps, can be left as is
         self.__REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
         self.__G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
-        self.__G_DRIVE_BASE_DOWNLOAD_URL = "https://drive.google.com/open?id={}"
+        self.__G_DRIVE_BASE_DOWNLOAD_URL = "https://drive.google.com/uc?id={}&export=download"
         self.__listener = listener
         self.__service = self.authorize()
         self._file_uploaded_bytes = 0
@@ -242,7 +242,7 @@ class GoogleDriveHelper:
                         url = f'{INDEX_URL}/{file.get("name")}/'
                         msg += f' | <a href="{url}"> Index URL</a>'
                 else:
-                    msg += f"⁍ <a href='https://drive.google.com/open?id={file.get('id')}" \
+                    msg += f"⁍ <a href='https://drive.google.com/uc?id={file.get('id')}" \
                            f"&export=download'>{file.get('name')}</a> ({get_readable_file_size(int(file.get('size')))})"
                     if INDEX_URL is not None:
                         url = f'{INDEX_URL}/{file.get("name")}'
